@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Appointment>
+    <br />
+    <br />
+    <center>
+        <div>
+            <table class=" table-hover table-striped table-bordered table-layout: auto">
+                <thead class="text-center">
+                    <tr>
+                        <th>Appointment ID</th>
+                        <th>Time Slot</th>
+                        <th>Group Name</th>
+
+                    </tr>
+
+                </thead>
+                <tbody class="text-center">
+
+                    @foreach (var x in Model)
+                    {
+                        <tr>
+
+
+                            <td style="background-color:lightblue">@x.AppointmentId</td>
+                            @*<td>@x.Time.Date.ToString("hh:mm tt")</td>*@
+                            <td>@x.Time.Date</td>
+                            <td>@x.GroupName</td>
+
+
+                        </tr>
+                    }
+
+                </tbody>
+
+            </table>
+        </div>
+    </center>
+

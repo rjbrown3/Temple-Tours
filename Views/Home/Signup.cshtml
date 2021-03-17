@@ -1,0 +1,23 @@
+﻿@model  IQueryable<TimeSlot>
+<table>
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Reserve Appointment</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var x in Model)
+            {
+                <tr>
+                    <td>@x.Date.ToString("yyyy-MM-dd")</td>
+                    <td>@x.Date.ToString("hh:mm tt")</td>
+                    <td><form method="post" asp-action="GoToSignup">
+                            <input type="hidden" id="timeslot" name="timeslot" value="@x.TimeSlotId" />
+                            <button type="submit">Reserve Time Slot</button>
+                        </form></td>
+                </tr>
+            }
+    </tbody>
+</table>

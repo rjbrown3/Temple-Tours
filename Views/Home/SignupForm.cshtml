@@ -1,0 +1,30 @@
+﻿@model TempleTours.Models.Appointment  
+
+<form method="post" asp-action="SignupForm">
+    <label asp-for="GroupName">GroupName: </label>
+    <input asp-for="GroupName" />
+    <br />
+    <br />
+
+    <label asp-for="GroupSize">Number of Group Members: </label>
+    <input asp-for="GroupSize" />
+    <br />
+    <br />
+
+    <label asp-for="Email">Email: </label>
+    <input asp-for="Email" />
+    <br />
+    <br />
+
+    <label asp-for="Phone">Phone Number: </label>
+    <input asp-for="Phone" />
+    <br />
+    <br />
+
+    <input asp-for="TimeSlotId" type="hidden" value="@ViewBag.Timeslot" />
+    <input asp-for="Time" type="hidden" value="null" />
+
+    <button type="submit">Reserve Appointment</button>
+    <br />
+    <div asp-validation-summary="All"></div>
+</form>
