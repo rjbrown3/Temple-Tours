@@ -1,4 +1,6 @@
 ﻿@model IEnumerable<Appointment>
+<!--We use the Appointment IEnumerable to run through each instance of the appointments and also output the time objects.
+    -->
     <br />
     <br />
     <center>
@@ -7,25 +9,22 @@
                 <thead class="text-center">
                     <tr>
                         <th>Appointment ID</th>
-                        <th>Time Slot</th>
+                        <th>Date</th>
+                        <th>Time</th>
                         <th>Group Name</th>
 
                     </tr>
 
                 </thead>
                 <tbody class="text-center">
-
+                    <!--our for loop that outputs the appointmentID, date of appointment and groupname  "dd:hh:mm tt"-->
                     @foreach (var x in Model)
                     {
                         <tr>
-
-
                             <td style="background-color:lightblue">@x.AppointmentId</td>
-                            @*<td>@x.Time.Date.ToString("hh:mm tt")</td>*@
-                            <td>@x.Time.Date</td>
+                            <td>@x.Time.Date.ToString("MMMM dd")</td>
+                            <td>@x.Time.Date.ToString("hh:mm tt")</td>
                             <td>@x.GroupName</td>
-
-
                         </tr>
                     }
 

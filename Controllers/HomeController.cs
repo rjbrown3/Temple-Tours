@@ -10,7 +10,6 @@ using TempleTours.Models;
 
 // time slots for the Signup
 // appointments for ViewAppointments
-// SignUpForm
 
 namespace TempleTours.Controllers
 {
@@ -63,11 +62,10 @@ namespace TempleTours.Controllers
         {
             ViewBag.Timeslot = timeslot;
 
-            //ViewData["time"] = time;
-
             return View("SignupForm");
         }
 
+        //Render all appointments on appointments page
         public IActionResult ViewAppointments()
         {
             IQueryable<Appointment> query = context.Appointments.Include(a => a.Time);
